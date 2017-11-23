@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Título</td>
+			<td>Lista de Organizadores</td>
+			<td>Lista de Promotores</td>
+			<td>Data de ínicio do evento</td>
+			<td>Data de término do evento</td>
+			<td>Horário de início do evento</td>
+			<td>Horário de término do evento</td>
+			<td>Lista de Patrocinadores</td>
+			<td>Ações</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for evento in object_list %}
+		<tr>
+			<td>{{ evento.id }}</td>
+			<td>{{ evento.titulo }}</td>
+			<td>{{ evento.lista_de_organizadores }}</td>
+			<td>{{ evento.lista_de_promotores }}</td>
+			<td>{{ evento.data_inicio }}</td>
+			<td>{{ evento.data_fim }}</td>
+			<td>{{ evento.horario_inicio }}</td>
+			<td>{{ evento.horario_fim }}</td>
+			<td>{{ evento.lista_de_patrocinadores }}</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'eventos:evento_editar' evento.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'eventos:evento_eliminar' evento.id %}">Excluir</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>Não existem registros de eventos</h1>
+		{% endif %}
+	</tbody>
+</table> 
+{% endblock%}

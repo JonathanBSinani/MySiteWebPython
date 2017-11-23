@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% block extrastatic %}
+  <link href="static/css/form-signin-theme.css" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block title %}
+Mascotas
+{% endblock %}
+
+{% block navbar%}
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-offset-3">
+      <div class="account-wall">
+        <img class="profile-img" src="static/images/midiacode.png" alt="Imagem decorativa">
+        <form class="form-signin" method="post">
+          {% csrf_token %}
+           <div class="row">
+                <div class="form-group">
+                    <label for="username">Nome do usuário</label>
+                    <input class="form-control" type="text" name="username" required autofocus>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="username">Senha</label>
+                    <input class="form-control" type="password" name="password" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                  <a class="btn btn-lg btn-default btn-block" href="{% url 'usuarios:registrar' %}">Criar uma conta</a>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

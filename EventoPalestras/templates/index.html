@@ -1,10 +1,10 @@
 {% extends 'base/base.html' %}
 
 {% block extrastatic %}
-  <link href="static/css/form-signin-theme.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/form-signin-theme.css" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block title %}
-Mascotas
+Login
 {% endblock %}
 
 {% block navbar%}
@@ -14,7 +14,7 @@ Mascotas
   <div class="row">
     <div class="col-sm-6 col-md-offset-3">
       <div class="account-wall">
-        <img class="profile-img" src="static/images/midiacode.png" alt="Imagem decorativa">
+        <img class="profile-img" src="/static/images/midiacode.png" alt="Imagem decorativa">
         <form class="form-signin" method="post">
           {% csrf_token %}
            <div class="row">
@@ -43,8 +43,7 @@ Mascotas
     </div>
   </div>
 </div>
+{% endblock %}
 
-
-
-
+{% block footer%}
 {% endblock %}

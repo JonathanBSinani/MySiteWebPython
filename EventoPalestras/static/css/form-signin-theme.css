@@ -12,7 +12,6 @@ body {
     display: table-cell;
     vertical-align: middle;
     background: url('../images/hands-poly-background.jpg');
-    background-position: left top;
 }
 
 /* CLASSES DOS COMPONENTES DO FORM LOGIN */
